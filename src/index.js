@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Fonts from "./assets/fonts/";
+import Header from "./components/Header/Header";
+import HeroImg from "./components/HeroImage/HeroImage";
+import { BrowserRouter } from "react-router-dom";
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-transform: uppercase;
+  }
+
+  body {
+    font: 18px "CeraPro";
+    line-height: 1.2;
+    padding: 0 50px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
+
+const App = () => {
+  return (
+    <>
+      <Fonts />
+      <GlobalStyle />
+      <Header />
+      <HeroImg />
+    </>
+  );
+};
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </BrowserRouter>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
