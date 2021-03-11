@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Fonts from "./assets/fonts/";
 import Header from "./components/Header/Header";
-import HeroImg from "./components/HeroImage/HeroImage";
-import { BrowserRouter } from "react-router-dom";
+import Main from "./pages/Main";
+import Themes from "./pages/Themes";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -33,7 +34,14 @@ const App = () => {
       <Fonts />
       <GlobalStyle />
       <Header />
-      <HeroImg />
+      <Switch>
+        <Route exact path="/">
+          <Main />
+        </Route>
+        <Route exact path="/themes">
+          <Themes />
+        </Route>
+      </Switch>
     </>
   );
 };

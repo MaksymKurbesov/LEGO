@@ -19,10 +19,10 @@ const NavMenu = () => {
     <Nav>
       <ul>
         <li>
-          <NavLink to="/">Themes</NavLink>
+          <NavLink to="/themes">Themes</NavLink>
         </li>
         <li>
-          <NavLink to="/">Interests</NavLink>
+          <NavLink to="/">Minifigures</NavLink>
         </li>
         <li>
           <NavLink to="/">Lego apps</NavLink>
